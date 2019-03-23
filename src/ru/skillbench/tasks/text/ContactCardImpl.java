@@ -24,15 +24,12 @@ public class ContactCardImpl implements ContactCard {
             values.add(scanner.nextLine());
 
         }
-
         if (values.size() < 2 || values.get(0).compareTo("BEGIN:VCARD")!=0) {
 
             throw new NoSuchElementException();
         }
         System.out.println(scanner.toString(	));
         System.out.println(values);
-
-
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {
             Date date = sdf.parse(values.get(4).split(":")[1]);
@@ -44,7 +41,7 @@ public class ContactCardImpl implements ContactCard {
                 }
                 gender = values.get(3).split(":")[1];
             } catch (ArrayIndexOutOfBoundsException ex){
-                System.out.println(values.size() + "ssss " + values.get(0));
+                System.out.println(values.size() + " " + values.get(0));
             }
 
         } catch (ParseException e) {
@@ -59,7 +56,6 @@ public class ContactCardImpl implements ContactCard {
         }
         return this;
     }
-
     public ContactCard getInstance(String data) {
         Scanner sc = new Scanner(data);
         return this.getInstance(sc);
