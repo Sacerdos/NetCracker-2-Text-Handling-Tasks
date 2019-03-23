@@ -8,6 +8,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ContactCardImpl implements ContactCard{
+    ContactCardImpl(){
+
+    }
     @Override
     public ContactCard getInstance(Scanner scanner){
 
